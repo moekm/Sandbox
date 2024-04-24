@@ -3,6 +3,7 @@
 /**
  * Simple Pointers Exercise
  * byte = 8 bits
+ * Best for visualizing use: pythontutor.com/render.html
 */
 
 // prototype
@@ -12,7 +13,7 @@ int main() {
 
     // changing the value of a int using a function "by-reference"
     int num = 4;
-    int *pNum = &num;
+    int *pNum = &num; // think of it this way: if we (destructure) *pNum we get an int
 
     changeNum(pNum);
     printf("num variable after \"changeNum()\": %d", num);
@@ -39,6 +40,15 @@ int main() {
     printf("%p\n", ppn);       // the address of pn stored with in ppn
 
     printf("value of n: %d", ****ppppn); // for ****ppppn destructuring we get an int number
+
+
+    // Simple Casting
+    int n = 23;
+    void *ptr = &n;
+
+    // casting
+    printf("Casted to a float: %d", *(float*)ptr); // reads the binary as a float 
+
 
     return 0;
 }
